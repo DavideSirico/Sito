@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 058</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a class="active-top" href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="050.html">050</a></li>
+    <li><a href="051.html">051</a></li>
+    <li><a href="054.html">054</a></li>
+    <li><a href="055.html">055</a></li>
+    <li><a href="056.html">056</a></li>
+    <li><a href="057.html">057</a></li>
+    <li><a class="active-left"     href="058.html">058</a></li>
+    <li><a href="059.html">059</a></li>
+    <li><a href="060.html">060</a></li>
+    <li><a href="061.html">061</a></li>
+    <li><a href="062.html">062</a></li>
+    <li><a href="063.html">063</a></li>
+    <li><a href="064.html">064</a></li>
+
+  </ul>
+  <div class="consegna">58&gt Benchmark tra sorting: bubble, selection, insertion<br>
+    <br>
+    int swap_count = 0;<br>
+    int comp_count = 0;<br>
+    void incSwap() { swap_count++; }<br>
+    void incComp() { comp_count++; }<br>
+    <br>
+    void resetCounters(){<br>
+        swap_count = 0;<br>
+        comp_count = 0;<br>
+    }<br>
+    void printCounters(){<br>
+        printf("Confronti effettuati: %d\n", comp_count);<br>
+        printf("Scambi effettuati: %d\n", swap_count);<br>
+    }<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &lttime.h&gt
+#include &ltstdlib.h&gt
+#define DIM 10
+
+void carica(int []);
+void sort_bubble(int []);
+void sort_insertion(int []);
+void sort_sel(int []);
+void incSwap();
+void incComp();
+void resetCounters();
+void printCounters();
+
+int swap_count=0;
+int comp_count=0;
+
+int main(){
+    int n,v[DIM];
+    srand(time(NULL));
+    carica(v);
+    while(1){
+        printf("0: exit\n1:carica\n2:bubble sort\n3:selection sort\n4:insertion sort\n");
+        printf("Inserire l'opzione: ");
+        scanf("%d",&n);
+        fflush(stdin);
+        switch(n){
+            case 0:
+                return 0;
+            case 1:
+                carica(v);
+            break;
+            case 2:
+                resetCounters();
+                sort_bubble(v);
+                printCounters();
+            break;
+            case 3:
+                resetCounters();
+                sort_sel(v);
+                printCounters();
+            break;
+            case 4:
+                resetCounters();
+                sort_insertion(v);
+                printCounters();
+            break;
+            default:
+                printf("Numero non valido\n");
+            break;
+        }
+    }
+}
+
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%99;
+    }
+}
+
+void sort_bubble(int v[DIM]){
+    int i,j,temp;
+    int v2[DIM];
+    long int temp1,temp2;
+    
+    for(i=0;i&ltDIM;i++){
+        v2[i]=v[i];
+        printf("%d ",v2[i]);
+    }
+    putchar('\n');
+    temp1=clock();
+    for(i=0;i&ltDIM-1;i++){
+        for(j=i+1;j&ltDIM;j++){
+            incComp();
+             if(v2[j]&ltv2[i]){
+                incSwap();
+                temp=v2[j];
+                v2[j]=v2[i];
+                v2[i]=temp;
+            }
+        }
+    }
+    temp2=clock();
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v2[i]);
+    }
+    printf("\nTempo di esecuzione: %li",temp2-temp1);
+    putchar('\n');
+}
+
+void sort_insertion(int v[DIM]){
+	int i,j,min;
+    int v2[DIM];
+    long int temp1,temp2;
+    
+    for(i=0;i&ltDIM;i++){
+        v2[i]=v[i];
+        printf("%d ",v2[i]);
+    }
+    putchar('\n');
+    temp1=clock();
+    for(i=1;i&ltDIM;i++){
+        min=v2[i];
+        for(j=i-1;(j&gt=0) && (min&ltv2[j]);j--){
+            v2[j+1]=v2[j];
+        }
+        incSwap();
+        v2[j+1]=min;
+    }
+    temp2=clock();
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v2[i]);
+    }
+    
+    printf("\nTempo di esecuzione: %li",temp2-temp1);
+    putchar('\n');
+}
+
+void sort_sel(int v[DIM]){
+	int i,j,imin,temp;
+    int v2[DIM];
+    long int temp1,temp2;
+    
+    for(i=0;i&ltDIM;i++){
+        v2[i]=v[i];
+        printf("%d ",v2[i]);
+    }
+    putchar('\n');
+	temp1=clock();
+    for(i=0;i&lt(DIM-1);i++){
+		imin=i;
+		for(j=i+1;j&ltDIM;j++){
+            incComp();
+			if(v2[imin]&gtv2[j]){
+				imin=j;
+			}
+		}
+		if(i!=imin){
+            incSwap();
+            temp=v2[i];
+            v2[i]=v2[imin];
+            v2[imin]=temp;
+		}
+	}
+    temp2=clock();
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v2[i]);
+    }
+    printf("\nTempo di esecuzione: %li",temp2-temp1);
+    putchar('\n');
+}
+
+void incSwap() { swap_count++; }
+void incComp() { comp_count++; }
+void resetCounters(){
+    swap_count=0;
+    comp_count=0;
+}
+
+void printCounters(){
+    printf("Confronti effettuati: %d\n",comp_count);
+    printf("Scambi effettuati: %d\n",swap_count);
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/058.c">058.c</a>
+</body>
+</html>

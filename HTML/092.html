@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 092</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a class="active-top" href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="074.html">074</a></li>
+    <li><a href="075.html">075</a></li>
+    <li><a href="076.html">076</a></li>
+    <li><a href="077.html">077</a></li>
+    <li><a href="078.html">078</a></li>
+    <li><a href="080.html">080</a></li>
+    <li><a href="082.html">082</a></li>
+    <li><a href="084.html">084</a></li>
+    <li><a href="085.html">085</a></li>
+    <li><a href="086.html">086</a></li>
+    <li><a href="087.html">087</a></li>
+    <li><a href="088.html">088</a></li>
+    <li><a href="089.html">089</a></li>
+    <li><a href="090.html">090</a></li>
+    <li><a href="091.html">091</a></li>
+    <li><a class="active-left"     href="092.html">092</a></li> 
+  </ul>
+  <div class="consegna">9. Scrivere una funzione che permetta l’ordinamento per gruppi di caratteri separati da blank e newline di un file ASCII. <br>
+    (limitiamo il file a 100 parole)<br>
+    es: Oggi vado al mare.<br>
+    -&gtOggi al mare vado<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &ltstring.h&gt
+#define DIM 100
+#define L 80
+
+int main(){
+    FILE *fp_read,*fp_write;
+    fp_read=fopen("input.txt","r");
+    fp_write=fopen("output.txt","w");
+    if(fp_read==NULL || fp_write==NULL){
+        printf("Errore nell'apertura del file");
+        exit(1);
+    }
+
+    char parole[DIM][L];
+    int i=0,j;
+    int dim;
+    while(fscanf(fp_read,"%s",parole[i])!=EOF){
+        i++;
+    }
+    dim=i;
+    i=0;
+    char temp[L];
+    for(i=0;i&ltdim-1;i++){
+        for(j=i+1;j&ltdim;j++){
+            if(strcmp(parole[i],parole[j])&gt0){
+                strcpy(temp,parole[i]);        
+                strcpy(parole[i],parole[j]);
+                strcpy(parole[j],temp);
+            }
+        }
+    }
+
+    i=0;
+    while(i&ltdim){
+        fprintf(fp_write,"%s\n",parole[i]);
+        i++;
+    }
+
+    fclose(fp_write);
+    fclose(fp_read);
+    return 0;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/092.c">092.c</a>
+</body>
+</html>

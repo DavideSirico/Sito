@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 078</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a class="active-top" href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="074.html">074</a></li>
+    <li><a href="075.html">075</a></li>
+    <li><a href="076.html">076</a></li>
+    <li><a href="077.html">077</a></li>
+    <li><a class="active-left"     href="078.html">078</a></li>
+    <li><a href="080.html">080</a></li>
+    <li><a href="082.html">082</a></li>
+    <li><a href="084.html">084</a></li>
+    <li><a href="085.html">085</a></li>
+    <li><a href="086.html">086</a></li>
+    <li><a href="087.html">087</a></li>
+    <li><a href="088.html">088</a></li>
+    <li><a href="089.html">089</a></li>
+    <li><a href="090.html">090</a></li>
+    <li><a href="091.html">091</a></li>
+    <li><a href="092.html">092</a></li> 
+  </ul>
+  <div class="consegna">78&gt
+    Creare un file "ricordi.old" tutto minuscolo.<br>
+    Cambiare il primo carattere di ogni paragrafo in maiuscolo (paragrafo: si va a capo dopo il punto).<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+
+int main(){
+    FILE *fp;
+    fp=fopen("ricordi.old","r+");
+    if(fp==NULL){
+        printf("Errore nell'apertura del file");
+        exit(1);
+    }
+    char buffer;
+    while((buffer=fgetc(fp))!=EOF){
+        if(buffer=='.'){
+            fseek(fp,2,1);
+            buffer=fgetc(fp);
+            if(buffer==EOF){
+                break;
+            }
+            fseek(fp,-1,1);
+            buffer=buffer-32;
+            fputc(buffer,fp);
+        }
+    }
+    fclose(fp);
+    return 0;
+}
+    
+  </PRE>
+  <a class="download" href="../C/078.c">078.c</a>
+</body>
+</html>

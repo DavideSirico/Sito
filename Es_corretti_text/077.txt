@@ -1,0 +1,23 @@
+#include &ltstdio.h&gt
+#include&ltstdlib.h&gt
+#include&ltstring.h&gt
+int main()
+{
+	char car;
+	int i,ctr;
+	FILE *fp;
+	fp=fopen("numeri.txt","r");
+	if(fp==NULL){
+		perror("Error: ");
+		exit(1);
+	}
+	ctr=0;
+	while((car=fgetc(fp))!=EOF){
+		if(car&gt='0' && car&lt='9'){
+			ctr++;
+		}
+	}
+	printf("Nel file sono presenti %d cifre",ctr);
+	fclose(fp);
+	return 0;
+}

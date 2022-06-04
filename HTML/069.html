@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 069</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a class="active-top" href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="065.html">065</a></li>
+    <li><a href="066.html">066</a></li>
+    <li><a href="068.html">068</a></li>
+    <li><a class="active-left"     href="069.html">069</a></li>
+    <li><a href="070.html">070</a></li>
+    <li><a href="071.html">071</a></li>
+
+  </ul>
+  <div class="consegna">69&gt Algoritmo ricorsivo per la visualizzazione di un vettore di interi<br></div>
+
+  <PRE>
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#define DIM 10
+void carica(int []);
+int visualizza(int [],int );
+int main(){
+    int v[DIM];
+    int i;
+    srand(time(NULL));
+    carica(v);
+    visualizza(v, i);
+    return 0;
+}
+int visualizza(int v[DIM],int i){
+    if(i==DIM){
+        return 0;
+    }else{
+        printf("%d ", v[i]);
+        return visualizza(v, i+1);
+    }
+}
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%10+1;
+    }
+}
+
+
+    
+  </PRE>
+  <a class="download" href="../C/069.c">069.c</a>
+</body>
+</html>

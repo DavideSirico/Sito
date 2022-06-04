@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 004</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a class="active-top" href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="001.html">001</a></li>
+    <li><a href="002.html">002</a></li>
+    <li><a href="003.html">003</a></li>
+    <li><a class="active-left"     href="004.html">004</a></li>
+    <li><a href="005.html">005</a></li>
+    <li><a href="006.html">006</a></li>
+    <li><a href="035.html">035</a></li>
+  </ul>
+  <div class="consegna">004 - (201) Dato un numero n, contare quanti divisori pari e quanti divisori dispari ha.<br>
+    Esempio: 16<br>
+    Dispari: 1 			1<br>
+    Pari: 2 4 8 16 			4<br>
+    <br>
+    Esempio: 25<br>
+    Dispari: 1 5 25 		3<br>
+    Pari: (nessuno) 		0<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+int main(){
+    int n,contaPari,contaDispari,i,flag;
+    flag=0;
+    contaDispari = 0;
+    contaPari = 0;
+    printf("Inserire un numero: ");
+    scanf("%d",&n);
+    fflush(stdin);
+    printf("Pari: ");
+    for(i=1;i&lt=n;i++){
+        if(n%i==0 && i%2==0){
+            contaPari++;
+            printf("%d ", i);
+            flag=1;
+        }
+    }
+    if(flag==0)
+    	printf("0");// No divisori pari = 0
+    printf("\nDispari: ");
+    for (i=1;i&lt=n;i++){
+        if (n%i==0 && i%2!=0){
+            contaDispari++;
+            printf("%d ", i);
+        }
+    }
+    printf("\nTotale pari: %d",contaPari);
+    printf("\nTotale dispari: %d",contaDispari);
+    return 0;
+}
+
+  </PRE>
+  <a class="download" href="../C/004.c">004.c</a>
+</body>
+</html>

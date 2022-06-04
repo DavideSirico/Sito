@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 065</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a class="active-top" href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="065.html">065</a></li>
+    <li><a href="066.html">066</a></li>
+    <li><a href="068.html">068</a></li>
+    <li><a href="069.html">069</a></li>
+    <li><a href="070.html">070</a></li>
+    <li><a href="071.html">071</a></li>
+
+  </ul>
+  <div class="consegna">65&gt Dato un numero n inserito esternamente calcolare la somma dei primi N numeri pari (&gt0) positivi in maniera ricorsiva.<br></div>
+
+  <PRE>
+#include &ltstdio.h&gt
+#include &lttime.h&gt
+#include &ltstdlib.h&gt
+int somma(int n);
+int main(){
+    int n;
+    long int ris;
+    printf("inserire n:");
+    scanf("%d", &n);
+    fflush(stdin);
+    printf("%d", somma(n));
+    return 0;
+}
+int somma(int n){
+    int ctr=n;
+    if(ctr==1){
+        return (2);
+    }else{
+        return (ctr*2+somma(ctr-1));
+    }
+}
+    
+  </PRE>
+  <a class="download" href="../C/065.c">065.c</a>
+</body>
+</html>

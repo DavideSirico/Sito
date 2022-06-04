@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 045</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a class="active-top" href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="045.html">045</a></li>
+    <li><a href="046.html">046</a></li>
+    <li><a href="047.html">047</a></li>
+    <li><a href="048.html">048</a></li>
+    <li><a href="049.html">049</a></li>
+    <li><a href="081.html">081</a></li>
+    <li><a href="083.html">083</a></li>
+  </ul>
+  <div class="consegna">45&gt Progettare e realizzare una funzione che effettui il controllo di validità (data entry) della data immessa nella forma gg/mm/aaaa.<br>
+    1 se valida<br>
+    0 se non valida<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+int data(int, int, int);
+int bisestile(int);
+int main(){
+    int gg1,gg2,mm1,mm2,aaaa1,aaaa2;
+    int max,n;
+    do{
+        putchar('\n');
+        printf("Inserire giorno 1: ");
+        scanf("%d", &gg1);
+        fflush(stdin);
+        printf("Inserire mese 1: ");
+        scanf("%d", &mm1);
+        fflush(stdin);
+        printf("Inserire anno 1: ");
+        scanf("%d", &aaaa1);
+        fflush(stdin);
+    }while(!data(gg1, mm1, aaaa1));
+    printf("\nData 1 valida!\n");
+    do{
+        putchar('\n');
+        printf("Inserire giorno 2: ");
+        scanf("%d", &gg2);
+        fflush(stdin);
+        printf("Inserire mese 2: ");
+        scanf("%d", &mm2);
+        fflush(stdin);
+        printf("Inserire anno 2: ");
+        scanf("%d", &aaaa2);
+        fflush(stdin);
+    }while(!data(gg2, mm2, aaaa2));
+    printf("\nData 2 valida!\n");
+    return 0;
+}
+int bisestile(int a){
+    if(a%4==0){
+        if(a%100==0){
+            if(a%400==0){
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    } else {
+        return 0;
+    }
+}
+int data(int gg, int mm,int aa){
+	int v[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+	if(aa&lt0){
+		printf("Data non esistente");
+		return 0;
+	}
+    if(bisestile(aa)){
+        v[2]=29;
+    }
+	if(mm&gt12 || mm&lt=0){
+		printf("Data non esistente");
+		return 0;
+	}
+	if(gg&gtv[mm]){
+		printf("Data non esistente");
+		return 0;
+	}
+	return 1;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/045.c">045.c</a>
+</body>
+</html>

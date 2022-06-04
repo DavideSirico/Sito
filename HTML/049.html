@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 049</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a class="active-top" href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="045.html">045</a></li>
+    <li><a href="046.html">046</a></li>
+    <li><a href="047.html">047</a></li>
+    <li><a href="048.html">048</a></li>
+    <li><a class="active-left"     href="049.html">049</a></li>
+    <li><a href="081.html">081</a></li>
+    <li><a href="083.html">083</a></li>
+  </ul>
+  <div class="consegna">49&gt Dato un array s dimensionato DIM di stringhe dimensionate L, scrivere una funzione 
+    int confronta(char [][L])
+    che ritorna il numero di stringhe uguali.
+    </div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstring.h&gt
+#define DIM 5
+#define L 80
+
+
+void sort(char [][L]);
+void carica(char [][L]);
+int confronta(char [][L]);
+int main(){
+    char s[DIM][L];
+    carica(s);
+    printf("Sono state trovate %d stringhe uguali",confronta(s));
+    return 0;
+}
+
+void carica(char s[DIM][L]){
+    int i;
+    printf("Inserire %d stringhe: \n",DIM);
+    for(i=0;i&ltDIM;i++){
+        gets(s[i]);
+        fflush(stdin);
+    }
+}
+
+void sort(char s[DIM][L]){
+    int i,j;
+    char temp[L];
+    for(i=0;i&ltDIM-1;i++){
+        for(j=i+1;j&ltDIM;j++){
+            if(strcmp(s[i],s[j])&gt0){
+                strcpy(temp,s[i]);
+                strcpy(s[i],s[j]);
+                strcpy(s[j],temp);
+            }
+        }
+    }
+}
+
+int confronta(char s[DIM][L]){
+    int i;
+    int c=0;
+    int somma=0;
+    sort(s);
+    for(i=1;i&ltDIM;i++){
+        if(strcmp(s[i],s[i-1])==0){
+            if(c==0){
+                c=c+2;
+            } else {
+                c++;
+            }
+        } else {
+            somma+=c;
+            c=0;
+        }
+    }
+    somma+=c;
+
+    return somma;
+}
+    
+  </PRE>
+  <a class="download" href="../C/049.c">049.c</a>
+</body>
+</html>

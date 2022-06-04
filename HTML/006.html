@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 006</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a class="active-top" href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="001.html">001</a></li>
+    <li><a href="002.html">002</a></li>
+    <li><a href="003.html">003</a></li>
+    <li><a href="004.html">004</a></li>
+    <li><a href="005.html">005</a></li>
+    <li><a class="active-left"     href="006.html">006</a></li>
+    <li><a href="035.html">035</a></li>
+  </ul>
+  <div class="consegna">006 - Inserire dei numeri a piacere (0 to esc).<br>
+    Visualizzare il primo max e il secondo max.<br></div>
+
+  <PRE>#include&ltstdio.h&gt
+int main(){
+    int n,max1,max2;
+    printf("Numero: ");
+    scanf("%d",&n);
+	fflush(stdin);
+	max1=n;
+	printf("Numero: ");
+    scanf("%d",&n);
+	fflush(stdin);
+	max2=n;
+    do{
+        if (n&gtmax1){
+            max2=max1;
+            max1=n;
+        } else if(n&gtmax2){
+            max2=n;
+        }
+        printf("Numeri: ");
+        scanf("%d",&n);
+    	fflush(stdin);
+	}while (n!=0);
+    printf("Max1=%d",max1);
+    printf("\nMax2=%d",max2);
+    return 0;
+}
+
+  </PRE>
+  <a class="download" href="../C/006.c">006.c</a>
+</body>
+</html>

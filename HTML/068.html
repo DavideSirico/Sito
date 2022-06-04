@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 068</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a class="active-top" href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="065.html">065</a></li>
+    <li><a href="066.html">066</a></li>
+    <li><a class="active-left"     href="068.html">068</a></li>
+    <li><a href="069.html">069</a></li>
+    <li><a href="070.html">070</a></li>
+    <li><a href="071.html">071</a></li>
+
+  </ul>
+  <div class="consegna">68&gt Scrivere una funzione ricorsiva che, dati due numeri interi n1 ed n2, restituisca la somma di tutti gli interi compresi tra n1 ed n2 estremi esclusi.<br></div>
+
+  <PRE>
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+int somma(int , int );
+int main(){
+    int n1,n2;
+    printf("inserire n1:");
+    scanf("%d", &n1);
+    fflush(stdin);
+    printf("inserire n2:");
+    scanf("\n%d", &n2);
+    fflush(stdin);
+    if(n1&ltn2)
+        printf("\n%d", somma(n1, n2));
+    else
+        printf("\n%d", somma(n2, n1));
+    return 0;
+}
+int somma(int n1, int n2){
+    int sum;
+    if(n1==n2-1){
+        return (0);
+    }else{
+        sum=sum+(n1+1);
+        return (sum+somma(n1+1,n2));
+    }
+}
+    
+  </PRE>
+  <a class="download" href="../C/068.c">068.c</a>
+</body>
+</html>

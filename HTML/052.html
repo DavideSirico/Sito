@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 052</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a class="active-top" href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="007.html">007</a></li>
+    <li><a href="008.html">008</a></li>
+    <li><a href="009.html">009</a></li>
+    <li><a href="010.html">010</a></li>
+    <li><a href="011.html">011</a></li>
+    <li><a href="012.html">012</a></li>
+    <li><a href="013.html">013</a></li>
+    <li><a href="014.html">014</a></li>
+    <li><a href="015.html">015</a></li>
+    <li><a href="016.html">016</a></li>
+    <li><a href="017.html">017</a></li>
+    <li><a href="018.html">018</a></li>
+    <li><a href="019.html">019</a></li>
+    <li><a href="020.html">020</a></li>
+    <li><a href="021.html">021</a></li>
+    <li><a href="022.html">022</a></li>
+    <li><a href="023.html">023</a></li>
+    <li><a href="024.html">024</a></li>
+    <li><a href="025.html">025</a></li>
+    <li><a href="026.html">026</a></li>
+    <li><a href="027.html">027</a></li>
+    <li><a href="036.html">036</a></li>
+    <li><a class="active-left"     href="052.html">052</a></li>
+    <li><a href="053.html">053</a></li>
+  </ul>
+  <div class="consegna">52&gt convertire un array dimensionato DIM=8 da binario a decimale<br>
+    es int v[]={0,0,0,0,1,1,0,1}; //un byte<br>
+    00001101[2]=13[10]<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltmath.h&gt
+
+int potenza(int,int);
+int main(){
+    int v[]={1,1,1,1,1,1,1,1};
+    int i,ris,pot,dim;
+    dim=sizeof(v)/sizeof(int);
+    ris=0;
+    pot=potenza(2,dim-1);
+    for(i=0;i&ltdim;i++){
+        ris=ris+(pot*v[i]);
+        printf("%d\n",ris);
+        pot=potenza(2,(dim-2)-i);
+    }
+
+    printf("Decimale: %d",ris);
+    return 0;
+}
+
+int potenza(int n,int esp){
+    int i,ris;
+    ris=1;
+    for(i=0;i&ltesp;i++){
+        ris=ris*n;
+    }
+    return ris;
+}
+    
+  </PRE>
+  <a class="download" href="../C/052.c">052.c</a>
+</body>
+</html>

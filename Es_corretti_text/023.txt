@@ -1,0 +1,16 @@
+#include &ltstdio.h&gt
+#define ROW 8
+#define COL 11
+int main(){
+	int m[ROW][COL],i,j;	
+	for(i=0;i&ltROW;i++){
+		for(j=0;j&ltCOL;j++)
+			m[i][j]=i+j;	
+	}
+	for(i=0;i&ltROW;i++){
+		for(j=0;j&ltCOL;j++)
+			printf("%4d",m[i][j]);	
+		putchar('\n');
+	}
+	return 0;
+}

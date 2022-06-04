@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 067</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a class="active-top" href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="067.html">067</a></li>
+    <li><a href="079.html">079</a></li>
+  </ul>
+  <div class="consegna">67&gt puntatori e ricorsione<br>
+    ==========================<br>
+    Scrivere la funzione ricorsiva:<br>
+    int count_char(char *str, char c, int) // + facile<br>
+    int count_char(char *str, char c) // + difficile<br>
+    che conta il numero di occorrenze del carattere c nella stringa str. <br></div>
+
+  <PRE>#include&ltstdio.h&gt
+#include&ltstring.h&gt
+#define L 80
+int count_char(char *,char );
+int main()
+{
+	char *s,c,str[L];
+	printf("inserisci stringa: ");
+	scanf("%s",str);
+	fflush(stdin);
+	s=&str[0];
+	printf("inserisci carattere: ");
+	scanf("%c",&c);
+	fflush(stdin);
+	printf("occorrenze: %d",count_char(s,c));
+	return 0;
+}
+int count_char(char *str,char c){
+	if(*str=='\0'){
+		return 0;
+	}else
+	{
+		if(*str==c){
+			return count_char(str+1,c)+1;
+		}else
+		{
+			return count_char(str+1,c);
+		}	
+	}
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/067.c">067.c</a>
+</body>
+</html>

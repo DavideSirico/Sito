@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 003</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a class="active-top" href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="001.html">001</a></li>
+    <li><a href="002.html">002</a></li>
+    <li><a class="active-left"     href="003.html">003</a></li>
+    <li><a href="004.html">004</a></li>
+    <li><a href="005.html">005</a></li>
+    <li><a href="006.html">006</a></li>
+    <li><a href="035.html">035</a></li>
+  </ul>
+  <div class="consegna">003 - (101) Dati due numeri m e n, visualizzare, contare e sommare i numeri che sono divisori di entrambi.<br>
+    Esempio con m=20, n=30 <br>
+    1 2 5 10 conteggio 4, somma 18<br></div>
+
+  <PRE>#include&ltstdio.h&gt
+int main(){
+	int m,n,i,numDivisori,somma;
+	i=2;
+	numDivisori=1;
+	somma=1;
+	do{
+		printf("m:");
+		scanf("%d",&m);
+		fflush(stdin);
+	}while(m&lt=0);
+	do{
+		printf("n:");
+		scanf("%d",&n);
+		fflush(stdin);
+	}while(n&lt=0);
+	printf("1 ");
+	while(i&lt=m && i&lt=n){
+		if(m%i==0 && n%i==0){
+			printf("%d ",i);
+			somma=somma+i;
+			numDivisori=numDivisori+1;
+		}
+		i=i+1;	
+	}
+	printf("\nNumero divisori comuni=%d\n",numDivisori);
+	printf("Somma=%d",somma);	
+	return 0;	
+}
+
+  </PRE>
+  <a class="download" href="../C/003.c">003.c</a>
+</body>
+</html>

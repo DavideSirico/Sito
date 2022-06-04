@@ -1,0 +1,61 @@
+/*
+Caricare un vet v DIM=20 con numeri random a piacere.
+Visualizzare v.
+Ordinare la prima metà di v e poi la seconda metà di v.
+Alla fine v risulterà ordinato.
+Visualizzare nuovamente v.*/
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#include &ltstdio.h&gt
+#define DIM 20
+
+
+void half_sort(int []);
+void carica(int []);
+void visualizza(int []);
+int main(){
+    int v[DIM];
+    carica(v);
+    visualizza(v);
+    half_sort(v);
+    visualizza(v);
+
+    return 0;
+}
+
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%99;
+    }
+}
+
+void visualizza(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v[i]);
+    }
+    putchar('\n');
+}
+
+void half_sort(int v[DIM]){
+    int i,temp,j;
+    for(i=0;i&lt(DIM/2)-1;i++){
+        for(j=i+1;j&ltDIM/2;j++){
+            if(v[i]&gtv[j]){
+                temp=v[i];
+                v[i]=v[j];
+                v[j]=temp;
+            }
+        }
+    }
+    for(i=DIM/2;i&ltDIM-1;i++){
+        for(j=i+1;j&ltDIM;j++){
+            if(v[i]&gtv[j]){
+                temp=v[i];
+                v[i]=v[j];
+                v[j]=temp;
+            }
+        }
+    }
+}

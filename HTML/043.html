@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 043</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a class="active-top" href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="028.html">028</a></li>
+    <li><a href="029.html">029</a></li>
+    <li><a href="030.html">030</a></li>
+    <li><a href="031.html">031</a></li>
+    <li><a href="032.html">032</a></li>
+    <li><a href="033.html">033</a></li>
+    <li><a href="034.html">034</a></li>
+    <li><a href="037.html">037</a></li>
+    <li><a href="038.html">038</a></li>
+    <li><a href="039.html">039</a></li>
+    <li><a href="040.html">040</a></li>
+    <li><a href="041.html">041</a></li>
+    <li><a href="042.html">042</a></li>
+    <li><a class="active-left"     href="043.html">043</a></li>
+    <li><a href="044.html">044</a></li>
+
+  </ul>
+  <div class="consegna">43&gt Data una stringa s contare quante cifre ci sono.<br></div>
+
+  <PRE>#include&ltstdio.h&gt
+#include&ltstring.h&gt
+int main()
+{
+	char s[80];
+	int ctr,i;
+	ctr=0;
+	printf("Inserisci stringa: ");
+	gets(s);
+	for(i=0;i&ltstrlen(s);i++){
+		if(s[i]&gt=48 && s[i]&lt=57){
+			ctr++;
+		}
+	}
+	printf("le cifre nella stringa sono: %d",ctr);
+	return 0;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/043.c">043.c</a>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Bel nero        #282A35
+
+Azzurro ne      #D9EEDE
+
+Pergamena    #FFF4A3
+
+Amaranto	#E52B50
+
+Albicocca	#FBCEB1
+
+Acquamarina	#7FFFD4

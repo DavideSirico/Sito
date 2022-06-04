@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 051</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a class="active-top" href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="050.html">050</a></li>
+    <li><a class="active-left"     href="051.html">051</a></li>
+    <li><a href="054.html">054</a></li>
+    <li><a href="055.html">055</a></li>
+    <li><a href="056.html">056</a></li>
+    <li><a href="057.html">057</a></li>
+    <li><a href="058.html">058</a></li>
+    <li><a href="059.html">059</a></li>
+    <li><a href="060.html">060</a></li>
+    <li><a href="061.html">061</a></li>
+    <li><a href="062.html">062</a></li>
+    <li><a href="063.html">063</a></li>
+    <li><a href="064.html">064</a></li>
+
+  </ul>
+  <div class="consegna">51&gt
+confronti? 100  swap? ..... ordina? si se si (C/D)<br></div>
+
+  <PRE>
+/*int v1[DIM]={23,11,34,76,99,23,67,83,88,10};
+int i,j,box,c=0,cswap=0;
+  for(i=0;i&ltDIM;i++){
+    for(j=0;j&ltDIM;j++){
+      if(v[i]&ltv[j]){
+        box=v[i];
+        v[i]=v[j];
+        v[j]=box;
+        cswap++;
+      }
+      c++;
+    }
+  }
+*/
+#include &ltstdio.h&gt
+#define DIM 10
+int main(){
+    int v[DIM]={23,11,34,76,99,23,67,83,88,10};
+    int i,j,box,c=0,cswap=0;
+	for(i=0;i&ltDIM;i++){
+		for(j=0;j&ltDIM;j++){
+			if(v[i]&ltv[j]){
+				box=v[i];
+				v[i]=v[j];
+				v[j]=box;
+				cswap++;
+			}
+			c++;
+		}
+	}
+    for(i=0;i&ltDIM;i++){
+        printf("%d ", v[i]);
+    }
+    printf("\n%d", c);
+    printf("\n%d", cswap);
+}
+    
+  </PRE>
+  <a class="download" href="../C/051.c">051.c</a>
+</body>
+</html>

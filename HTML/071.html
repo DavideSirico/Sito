@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 071</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a class="active-top" href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="065.html">065</a></li>
+    <li><a href="066.html">066</a></li>
+    <li><a href="068.html">068</a></li>
+    <li><a href="069.html">069</a></li>
+    <li><a href="070.html">070</a></li>
+    <li><a class="active-left"     href="071.html">071</a></li>
+
+  </ul>
+  <div class="consegna">71&gt	Ricerca dicotomica ricorsiva in un array ordinato<br></div>
+
+  <PRE>#include&ltstdio.h&gt
+#define DIM 10
+void visualizza(int []);
+int binary_research(int [],int ,int ,int );
+int main()
+{
+	int v[DIM]={11,56,64,77,88,102,113,145,154,161},N,fine,inizio,i,flag;
+	inizio=0;
+	fine=DIM-1;
+	flag=0;
+	visualizza(v);
+	printf("inserisci numero: ");
+	scanf("%d",&N);
+	fflush(stdin);
+	for(i=0;i&ltDIM;i++){
+		if(v[i]==N){
+			flag=1;
+		}
+	}
+	if(flag==1){
+		printf("il numero si trova alla posizione %d",binary_research(v,N,fine,inizio));
+	}else
+	{
+		printf("numero non presente");	
+	}
+	return 0;
+}
+void visualizza(int v[DIM]){
+	int i;
+	for(i=0;i&ltDIM;i++){
+		printf("%d ",v[i]);
+	}
+	putchar('\n');
+}
+int binary_research(int v[DIM],int N,int fine,int inizio){
+	int medio;
+	medio=(inizio+fine)/2;
+	if(N==v[medio]){
+		return medio+1;
+	}else
+	{
+		if(N&gtv[medio]){
+			return binary_research(v,N,fine,medio+1);
+		}else
+		{	
+			return binary_research(v,N,medio-1,inizio);
+		}
+	}
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/071.c">071.c</a>
+</body>
+</html>

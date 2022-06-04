@@ -1,0 +1,62 @@
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#define ROW 5
+#define COL 7
+int main(){
+    int m[ROW][COL],i,j,somma,sommamax,posmax,pos,sommamin,posmin,temp;
+    srand(time(NULL));
+    posmax=0;
+    sommamax=0;
+    sommamin=0;
+    //caricamento della matrice
+    for(i=0;i&ltROW;i++){
+        for(j=0;j&ltCOL;j++){
+            m[i][j]=rand()%9+1;
+        }
+    }
+    //visualizzazione della matrice
+    for(i=0;i&ltROW;i++){
+        for(j=0;j&ltCOL;j++){
+            printf("%2d",m[i][j]);
+        }
+        putchar('\n');
+    }
+    //init sommamax, sommamin
+    for(i=0;i&ltROW;i++){
+        somma=somma+m[i][0];
+        pos=j;
+    }
+    sommamax=somma;
+    sommamin=somma;
+    somma=0;
+    //colonna max e min
+    for(j=0;j&ltCOL;j++){
+        for(i=0;i&ltROW;i++){
+            somma=somma+m[i][j];
+            pos=j;
+        }
+        if(somma&gtsommamax){
+            sommamax=somma;
+            posmax=pos;
+        }
+        if(somma&ltsommamin){
+            sommamin=somma;
+            posmin=pos;
+        }
+        somma=0;
+    }
+    for(j=0;j&ltROW;j++){
+        temp=m[j][posmin];
+        m[j][posmin]=m[j][posmax];
+        m[j][posmax]=temp;
+    }
+    //visualizzazione matrice
+    for(i=0;i&ltROW;i++){
+        putchar('\n');
+        for(j=0;j&ltCOL;j++){
+            printf("%2d",m[i][j]);
+        }
+    }
+    return 0;    
+}

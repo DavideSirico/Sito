@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 026</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a class="active-top" href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="007.html">007</a></li>
+    <li><a href="008.html">008</a></li>
+    <li><a href="009.html">009</a></li>
+    <li><a href="010.html">010</a></li>
+    <li><a href="011.html">011</a></li>
+    <li><a href="012.html">012</a></li>
+    <li><a href="013.html">013</a></li>
+    <li><a href="014.html">014</a></li>
+    <li><a href="015.html">015</a></li>
+    <li><a href="016.html">016</a></li>
+    <li><a href="017.html">017</a></li>
+    <li><a href="018.html">018</a></li>
+    <li><a href="019.html">019</a></li>
+    <li><a href="020.html">020</a></li>
+    <li><a href="021.html">021</a></li>
+    <li><a href="022.html">022</a></li>
+    <li><a href="023.html">023</a></li>
+    <li><a href="024.html">024</a></li>
+    <li><a href="025.html">025</a></li>
+    <li><a class="active-left"     href="026.html">026</a></li>
+    <li><a href="027.html">027</a></li>
+    <li><a href="036.html">036</a></li>
+    <li><a href="052.html">052</a></li>
+    <li><a href="053.html">053</a></li>
+  </ul>
+  <div class="consegna">026&gt Caricare una matrice quadrata m con DIM=10 con numeri progressivi che partono da 1 e finiscono a 100.<br>
+    Visualizzare mcon la griglia semplice.<br>
+    Caricamento per righe.<br>
+    .......<br>
+    carica(m)<br>
+    visualizza-frame(m) <br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#define DIM 10
+void visualizzaframe(int [][DIM],int);
+void carica(int [][DIM]);
+int main(){
+    int m[DIM][DIM];
+    carica(m);
+    visualizzaframe(m,3);
+    return 0;
+}
+void visualizzaframe(int m[DIM][DIM], int c){
+    int i,j,k;
+    for(i=0;i&ltDIM;i++){
+        putchar(' ');
+        for(j=0;j&ltc;j++){
+            putchar('-');
+        }
+    }
+    putchar('\n');
+    for(i=0;i&ltDIM;i++){
+        for(j=0;j&ltDIM;j++){
+            printf("|%3d",m[i][j]);
+        }
+        putchar('|');
+        putchar('\n');
+        for(j=0;j&ltDIM;j++){
+            putchar(' ');
+            for(k=0;k&ltc;k++){
+                putchar('-');
+            }
+        }
+        putchar('\n');   
+    }
+    putchar('\n');
+}
+void carica(int m[DIM][DIM]){
+    int i,j,c;
+    c=1;
+    for(i=0;i&ltDIM;i++){
+        for(j=0;j&ltDIM;j++){
+            m[i][j]=c;
+            c=c+1;
+        }
+    }
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/026.c">026.c</a>
+</body>
+</html>

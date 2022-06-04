@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 091</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a class="active-top" href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="074.html">074</a></li>
+    <li><a href="075.html">075</a></li>
+    <li><a href="076.html">076</a></li>
+    <li><a href="077.html">077</a></li>
+    <li><a href="078.html">078</a></li>
+    <li><a href="080.html">080</a></li>
+    <li><a href="082.html">082</a></li>
+    <li><a href="084.html">084</a></li>
+    <li><a href="085.html">085</a></li>
+    <li><a href="086.html">086</a></li>
+    <li><a href="087.html">087</a></li>
+    <li><a href="088.html">088</a></li>
+    <li><a href="089.html">089</a></li>
+    <li><a href="090.html">090</a></li>
+    <li><a class="active-left"     href="091.html">091</a></li>
+    <li><a href="092.html">092</a></li> 
+  </ul>
+  <div class="consegna">8.Creare un programma che dati due file “txt1.txt” e txt2.txt” copia in un terzo file “txt3.txt” solo la parte iniziale di “txt1.txt” presente anche all’inizio di “txt2.txt”.<br>
+    es:<br>
+    "Oggi sono a scuola per bere un caffè"<br>
+    "Oggi sono a scuola per farmi interrogare in inglese"<br>
+    "Oggi sono a scuola per "<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+
+int main(){
+    FILE *fp1,*fp2,*fp_write;
+    fp1=fopen("input0.txt","r");
+    fp2=fopen("input1.txt","r");
+    fp_write=fopen("output.txt","w");
+
+    if(fp1==NULL || fp2==NULL || fp_write==NULL){
+        printf("Errore nell'apertura");
+        exit(1);
+    }
+    char buffer1,buffer2;
+    int flag=0;
+    int c=0;
+    while(flag==0 && (((buffer1=fgetc(fp1))!=EOF) && ((buffer2=fgetc(fp2))!=EOF))){
+        if(buffer1==buffer2){
+            fputc(buffer1,fp_write);
+        } else {
+            flag=1;
+        }
+        
+        c++;
+    }
+    if(c==1){
+        printf("File diversi\n");
+    } else {
+        printf("Scrittura avvenuta con successo\n");
+    }
+
+    fclose(fp1);
+    fclose(fp2);
+    fclose(fp_write);
+    return 0;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/091.c">091.c</a>
+</body>
+</html>

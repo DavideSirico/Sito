@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 037</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a class="active-top" href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="028.html">028</a></li>
+    <li><a href="029.html">029</a></li>
+    <li><a href="030.html">030</a></li>
+    <li><a href="031.html">031</a></li>
+    <li><a href="032.html">032</a></li>
+    <li><a href="033.html">033</a></li>
+    <li><a href="034.html">034</a></li>
+    <li><a class="active-left"     href="037.html">037</a></li>
+    <li><a href="038.html">038</a></li>
+    <li><a href="039.html">039</a></li>
+    <li><a href="040.html">040</a></li>
+    <li><a href="041.html">041</a></li>
+    <li><a href="042.html">042</a></li>
+    <li><a href="043.html">043</a></li>
+    <li><a href="044.html">044</a></li>
+
+  </ul>
+  <div class="consegna">37&gt emulare la funzione strcpy char by char<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#define DIM 80
+void my_strcpy(char [], char []);
+int main(){
+    char s1[DIM],s2[DIM];
+    printf("Inserire la 1 stringa: ");
+    gets(s1);
+    fflush(stdin);
+    putchar('\n');
+    printf("Inserire la 2 stringa: ");
+    gets(s2);
+    fflush(stdin);
+    putchar('\n');
+    my_strcpy(s1,s2);
+    printf("Stringa 1: ");
+    puts(s1);
+    return 0;
+}
+void my_strcpy(char s1[DIM], char s2[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        s1[i]=s2[i];
+    }
+    s1[i]='\0';
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/037.c">037.c</a>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 024</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a class="active-top" href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="007.html">007</a></li>
+    <li><a href="008.html">008</a></li>
+    <li><a href="009.html">009</a></li>
+    <li><a href="010.html">010</a></li>
+    <li><a href="011.html">011</a></li>
+    <li><a href="012.html">012</a></li>
+    <li><a href="013.html">013</a></li>
+    <li><a href="014.html">014</a></li>
+    <li><a href="015.html">015</a></li>
+    <li><a href="016.html">016</a></li>
+    <li><a href="017.html">017</a></li>
+    <li><a href="018.html">018</a></li>
+    <li><a href="019.html">019</a></li>
+    <li><a href="020.html">020</a></li>
+    <li><a href="021.html">021</a></li>
+    <li><a href="022.html">022</a></li>
+    <li><a href="023.html">023</a></li>
+    <li><a class="active-left"     href="024.html">024</a></li>
+    <li><a href="025.html">025</a></li>
+    <li><a href="026.html">026</a></li>
+    <li><a href="027.html">027</a></li>
+    <li><a href="036.html">036</a></li>
+    <li><a href="052.html">052</a></li>
+    <li><a href="053.html">053</a></li>
+  </ul>
+  <div class="consegna">024&gt Caricare due vettori v e v2 con DIM=10 con numeri random [1..100].<br>
+    Un terzo vettore v3 con DIM=10 contiene il max tra v e v2 di ogni posizione. <br>
+    Visualizzare v, v2 e v3 con la griglia semplice.<br>
+    .......<br>
+    carica(v)<br>
+    carica(v2)<br>
+    carica-max(v,v2,v3)<br>
+    visualizza-frame(v)  // potete passare un 2° parametro<br>
+    visualizza-frame(v2) // potete passare un 2° parametro<br>
+    visualizza-frame(v3) // potete passare un 2° parametro<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#define DIM 10
+void visualizzaframe(int [],int);
+void carica(int []);
+void caricamax(int [],int [],int []);
+int main(){
+    int v[DIM],v2[DIM],v3[DIM];
+    srand(time(NULL));
+    carica(v);
+    carica(v2);
+    visualizzaframe(v,3);
+    visualizzaframe(v2,3);
+    caricamax(v,v2,v3);
+    visualizzaframe(v3,3);
+    return 0;
+}
+
+void visualizzaframe(int v[DIM], int c){
+    int i,j;
+    for(i=0;i&ltDIM;i++){
+        printf(" ");
+        for(j=0;j&ltc;j++){
+            printf("-");
+        }
+    }
+    putchar('\n');
+    for(i=0;i&ltDIM;i++){
+        printf("|%3d",v[i]);
+    }
+    printf("|");
+    putchar('\n');
+    for(i=0;i&ltDIM;i++){
+        printf(" ");
+        for(j=0;j&ltc;j++){
+            printf("-");
+        }
+    }
+    putchar('\n');
+}
+
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%100+1;
+    }
+}
+
+void caricamax(int v[DIM],int v2[DIM],int v3[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        if(v[i]&ltv2[i]){
+            v3[i]=v2[i];
+        } else {
+            v3[i]=v[i];
+        }
+    }
+
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/024.c">024.c</a>
+</body>
+</html>

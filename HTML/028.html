@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 028</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a class="active-top" href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="028.html">028</a></li>
+    <li><a href="029.html">029</a></li>
+    <li><a href="030.html">030</a></li>
+    <li><a href="031.html">031</a></li>
+    <li><a href="032.html">032</a></li>
+    <li><a href="033.html">033</a></li>
+    <li><a href="034.html">034</a></li>
+    <li><a href="037.html">037</a></li>
+    <li><a href="038.html">038</a></li>
+    <li><a href="039.html">039</a></li>
+    <li><a href="040.html">040</a></li>
+    <li><a href="041.html">041</a></li>
+    <li><a href="042.html">042</a></li>
+    <li><a href="043.html">043</a></li>
+    <li><a href="044.html">044</a></li>
+
+  </ul>
+  <div class="consegna">028&gt Emulare la funzione:<br>
+    strcpy(s1, s2)   Copia s2 in s1<br>
+    visualizzare le 2 stringhe.<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstring.h&gt
+void my_strcpy(char [], char[]);
+int main(){
+    int i;
+    char str1[]="Franco",str2[]="Foresta";
+    my_strcpy(str1,str2);
+    printf("Stringa1:");
+    puts(str1);
+    printf("Stringa2:");
+    puts(str2);
+    return 0;
+}
+void my_strcpy(char str1[20],char str2[0]){
+	int i;
+	for(i=0;i&ltstrlen(str2);i++){
+        str2[i]=str1[i];
+    }
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/028.c">028.c</a>
+</body>
+</html>

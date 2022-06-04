@@ -1,0 +1,37 @@
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#define DIM 10
+int main(){
+    int i,v[DIM],k,prossimo,distanza,distanzamin,distanzaposizione;
+    distanzamin=10;
+    printf("Inserire numero K: ");
+    scanf("%d",&k);
+	for(i=0;i&ltDIM;i++)
+		v[i]=rand()%100+1;		
+    for (i=0;i&ltDIM;i++){
+        if(k&gtv[i]){
+            distanza=k-v[i];
+            if(distanza&ltdistanzamin){
+                distanzamin=distanza;
+                prossimo=v[i];
+                distanzaposizione=i;
+            }
+        } else {
+            distanza=v[i]-k;
+            if(distanza&ltdistanzamin){
+                distanzamin=distanza;
+                prossimo=v[i];
+                distanzaposizione=i;
+            }
+        }
+
+    }
+    for (i=0;i&ltDIM;i++){
+        printf("%d ",v[i]);
+    }
+    printf("\ndistanza posizione=%d",distanzaposizione+1);
+    printf("\nprossimo=%d",prossimo);
+    return 0;
+}
+

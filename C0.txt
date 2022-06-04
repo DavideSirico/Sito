@@ -1,0 +1,597 @@
+Programmi da risolvere - tutti i prg saranno di volta in volta aggiornati in questo file<br>
+<br>
+nomi dei file: <br>
+210917_001_Cognome_Nome.c<br>
+<br>
+NUMBER SIGN (#) <br>
+AT SIGN (@)<br>
+AMPERSAND (&)<br>
+DASH (–)<br>
+UNDERSCORE (_)<br>
+SLASH (/)<br>
+BACKSLASH (\)<br>
+PIPE (|)<br>
+<br>
+<br>
+<br>
+210917<br>
+======<br>
+001 - area rettangolo (con fflush(stdin) - sizeof())<br>
+002 - dati 10 N inseriti esternamente, viasualizzare la somma e dire se è &gt &lt = a 100<br>
+<br>
+003 - (101) Dati due numeri m e n, visualizzare, contare e sommare i numeri che sono divisori di entrambi.<br>
+Esempio con m=20, n=30 <br>
+1 2 5 10 conteggio 4, somma 18<br>
+<br>
+004 - (201) Dato un numero n, contare quanti divisori pari e quanti divisori dispari ha.<br>
+Esempio: 16<br>
+Dispari: 1 			1<br>
+Pari: 2 4 8 16 			4<br>
+<br>
+Esempio: 25<br>
+Dispari: 1 5 25 		3<br>
+Pari: (nessuno) 		0<br>
+<br>
+210918<br>
+======<br>
+005 -(204) Dato un numero n, contare quanti suoi divisori sono potenze di 2.<br>
+Esempio: 16<br>
+2 4 8 16 		4<br>
+Esempio: 25<br>
+(nessuno) 		0<br>
+<br>
+210921<br>
+======<br>
+006 - Inserire dei numeri a piacere (0 to esc).<br>
+Visualizzare il primo max e il secondo max.<br>
+<br>
+210922<br>
+======<br>
+007 - caricare un vettore v con DIM=10 con numeri random [50..99].<br>
+visualizzare max, min e somma.<br>
+<br>
+<br>
+<br>
+lavori di gruppo del 210923:<br>
+----------------<br>
+ Definizione di informatica<br>
+ Dati e informazioni<br>
+ La codifica delle informazioni<br>
+ Hardware e software<br>
+ Definizione di sistema<br>
+ Sistema di elaborazione dati<br>
+ Il modello logico-funzionale dell’elaboratore:<br>
+ modello di Von Neumann<br>
+ Classificazione del sw<br>
+ Definizione di Sistema Operativo <br>
+<br>
+210923<br>
+======<br>
+008 - caricare un vettore v con DIM=10 con numeri random a piacere<br>
+-visualizzare il vettore<br>
+-scambiare il max col min<br>
+-visualizzare il vettore<br>
+<br>
+210928<br>
+======<br>
+009 - caricare un vettore v con DIM=10 con numeri random a piacere<br>
+- inserire un  numero k<br>
+- determinare  l’elemento  di v  più prossimo a k e la relativa posizione    <br>
+<br>
+010 - caricare un vettore let con DIM=10 con lettere maiuscole (HELP: dichiarare quindi  char let[DIM])<br>
+- visualizzare il numero complessivo delle vocali presenti nel vettore.<br>
+<br>
+211001<br>
+======<br>
+011 - Dichiarare un vettore v con DIM=10.<br>
+caricamento esterno: richiesto un elemento controllare, prima di inserirlo nel vettore, se è già presente, nel qual caso richiedere l’elemento.<br>
+<br>
+211006<br>
+======<br>
+012 - Caricare un vettore v con DIM=15 con in primi 15 numeri primi.<br>
+<br>
+013 - Caricare un vettore v con DIM=10 con in primi 10 numeri naturali.<br>
+-visualizzare il vettore<br>
+Eseguire un right-shift (spingere a dx) 1 2 3 4 5 6 7 8 9 10 -&gt  10 1 2 3 4 5 6 7 8 9<br>
+-visualizzare il vettore<br>
+<br>
+014 - Caricare un vettore v dimensionato 10 con in primi 10 numeri naturali.<br>
+-visualizzare il vettore<br>
+Eseguire un left-shift (spingere a sx) 1 2 3 4 5 6 7 8 9 10 -&gt  2 3 4 5 6 7 8 9 10 1<br>
+-visualizzare il vettore<br>
+<br>
+211008<br>
+======<br>
+015 - Caricare una matrice quadrata con DIM=10 con numeri random [1..9] nella parte superiore.<br>
+Nella parte inferiore gli elementi sono posti = 0.<br>
+<br>
+es con DIM=4<br>
+<br>
+2 4 6 7<br>
+0 3 2 3<br>
+0 0 3 5<br>
+0 0 0 7	<br>
+<br>
+016 - Caricare una matrice con ROW = 5 e COL=7 con numeri random a piacere.<br>
+Visualizzare la matrice.<br>
+Individuare la colonna con somma degli elementi<br>
+massima.<br>
+Visualizzare la colonna.<br>
+<br>
+<br>
+017 - Caricare una matrice con ROW = 5 e COL=7 con numeri random a piacere.<br>
+Visualizzare la matrice. <br>
+Individuare la colonna con somma degli elementi massima e minima.<br>
+Scambiare le due colonne.<br>
+Visualizzare nuovamente la matrice.<br>
+<br>
+211009<br>
+======<br>
+018 - Caricare un vettore v dimensionato DIM 10 con numeri random.<br>
+Visualizzare un vettore.<br>
+Mettere prima i numeri primi e poi i non primi, senza alterare l'ordine.<br>
+<br>
+211013<br>
+======<br>
+019 - Caricare un vettore v di DIM=10 con numeri random [1..100].<br>
+Inserire esternamente un numero N &gt 0 (data entry).<br>
+Contare quante volte occorre N nel vettore.<br>
+Visualizzare N.<br>
+<br>
+020 -Caricare una matrice quadrata m con numeri random [1..100].<br>
+Visualizzare la matrice.<br>
+Scambiare le righe 2 a 2(la prima con la seconda ... la penultima con l'ultima).<br>
+Visualizzare la matrice.<br>
+<br>
+211016<br>
+======<br>
+021 - Caricare un vettore v di DIM=20 con i primi DIM numeri della successione di FIBONACCI.<br>
+Visualizzare un vettore v.<br>
+<br>
+1 1 3 5 8 13 21 34 55 ...<br>
+(NB: esiste un altro numero palindromo nella successione, dopo il 55?)<br>
+<br>
+210119<br>
+======<br>
+022&gt Scrivere un programma che, letti gli elementi di due vettori v e v2 di lunghezza 5, determini il vettore w di lunghezza 10 ottenuto “appendendo” gli elementi di v2 a v. <br>
+Visualizzare v, v2 e w.<br>
+<br>
+Es: se v1 e v2 sono i vettori di caratteri<br>
+v 	PROVA<br>
+v2 	ESAME<br>
+w	PROVAESAME<br>
+<br>
+023&gtScrivere un programma che inizializzi e quindi visualizzi una matrice m di ROW=8 e COL=11 di int in cui ciascun elemento è dato dalla somma dei propri indici.<br>
+<br>
+211106<br>
+======<br>
+024&gt Caricare due vettori v e v2 con DIM=10 con numeri random [1..100].<br>
+Un terzo vettore v3 con DIM=10 contiene il max tra v e v2 di ogni posizione. <br>
+Visualizzare v, v2 e v3 con la griglia semplice.<br>
+.......<br>
+carica(v)<br>
+carica(v2)<br>
+carica-max(v,v2,v3)<br>
+visualizza-frame(v)  // potete passare un 2° parametro<br>
+visualizza-frame(v2) // potete passare un 2° parametro<br>
+visualizza-frame(v3) // potete passare un 2° parametro<br>
+<br>
+025&gt Caricare un vettore v con DIM=10 con numeri random [10..99].<br>
+Visualizzare il vettore.<br>
+Scambiare gli elementi due a due: primo col secondo etc.<br>
+Visualizzare il vettore.<br>
+.......<br>
+carica(v)<br>
+visualizza(v)<br>
+scambia(v)<br>
+visualizza(v)<br>
+<br>
+026&gt Caricare una matrice quadrata m con DIM=10 con numeri progressivi che partono da 1 e finiscono a 100.<br>
+Visualizzare mcon la griglia semplice.<br>
+Caricamento per righe.<br>
+.......<br>
+carica(m)<br>
+visualizza-frame(m) <br>
+<br>
+211109<br>
+======<br>
+027&gt  Caricare una matrice quadrata m con DIM=10 con tutti 0.<br>
+Visualizzare la matrice.<br>
+Sovrascivere sulla matrice numeri progressivi, in senso orario, a partire dalla prima riga, ultima colonna, ultima riga e proma colonna.<br>
+.......<br>
+azzera(m);<br>
+visualizza(m);<br>
+spirale(m);<br>
+visualizza(m);<br>
+<br>
+211112<br>
+======<br>
+028&gt Emulare la funzione:<br>
+strcpy(s1, s2)   Copia s2 in s1<br>
+visualizzare le 2 stringhe.<br>
+<br>
+029&gt data una stringa s1, caricare il reverse di s1 in s2.<br>
+visualizzare le 2 stringhe.<br>
+<br>
+030&gt emulare la funzione:<br>
+strcat(s1, s2)   Concatena s2 dopo s1<br>
+visualizzare le 2 stringhe.<br>
+<br>
+031&gt emulare la funzione:<br>
+strlen(s)     Resituisce la lunghezza di s<br>
+--------------<br>
+l=lunghezza(s) <br>
+<br>
+032&gt data una stringa s1, copiare in una stringa s2 mettendo le vocali alla fine (sia MAIUSCOLE che minuscole! - ovviamente la lunghezza di s2 è uguale a quella di s)<br>
+es: "Mio nonno" -&gt "M nnniooo"<br>
+<br>
+211113<br>
+======<br>
+033&gt Inserire esternamente un numero di 5 cifre.<br>
+Demolire il numero nelle 5 cifre.<br>
+Caricarlo in un array DIM 5 nello stesso ordine.<br>
+<br>
+034&gt Inserire esternamente una stringa.<br>
+Restituire con una funzione le vocali.<br>
+--------<br>
+int vocali(char [])<br>
+<br>
+211116<br>
+======<br>
+035&gt Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero.<br>
+long int potenza(int , int);<br>
+<br>
+036&gt Scrivere una funzione che visualizzi un rettangolo di row righe per col colonne di *.<br>
+---------<br>
+void rettangolo(int, int);<br>
+<br>
+211117<br>
+======<br>
+37&gt emulare la funzione strcpy char by char<br>
+<br>
+38&gt emulare la funzione strncpy char by char<br>
+<br>
+39&gt emulare la funzione strcmp char by char<br>
+<br>
+40&gt emulare la funzione strncmp char by char<br>
+<br>
+41&gt emulare la funzione strcat char by char<br>
+<br>
+42&gt emulare la funzione strlen char by char<br>
+<br>
+211123<br>
+======<br>
+43&gt Data una stringa s contare quante cifre ci sono.<br>
+<br>
+44&gt Data una stringa s1 e una stringa s2, la funzione <br>
+int cerca(char [], char [])<br>
+retistuisce l'indice d'inizio se s2 è contenuta in s1<br>
+altrimenti riorna 0.<br>
+(appena s2 è contenuta in s1 inutile procedere nella ricerca)<br>
+<br>
+211124<br>
+======<br>
+45&gt Progettare e realizzare una funzione che effettui il controllo di validità (data entry) della data immessa nella forma gg/mm/aaaa.<br>
+1 se valida<br>
+0 se non valida<br>
+<br>
+46&gt Una volta controllato che due date sono valide trovare la differenza in giorni tra le due date. (Potrebbe risultare utile stabilire prima quale delle due date è maggiore).<br>
+<br>
+211126<br>
+======<br>
+47&gt quale data è maggiore tra 2 date<br>
+<br>
+work group: 3 es sulle date <br>
+*validità di una data (45)<br>
+*differenza in gg tra 2 date (46)<br>
+*quale data è maggiore tra 2 date (2 metodi: <br>
+o riconducendo le 2 date all'anno 0, <br>
+oppure partendo dall'anno se a1 = a2 allora confronto mese1 con mese2 ... etc) (47a, 47b)<br>
+<br>
+211130<br>
+======<br>
+48&gt inserire un array di stringhe dimensionato DIM<br>
+cercare la stringa se esiste o se non esiste<br>
+Esce con Enter<br>
+<br>
+211203<br>
+======<br>
+49&gt Dato un array s dimensionato DIM di stringhe dimensionate L, scrivere una funzione <br>
+int confronta(char [][L])<br>
+che ritorna il numero di stringhe uguali.<br>
+<br>
+211217<br>
+======<br>
+50&gt Dato un array v dimensionato DIM=10 ordinare gli elementi limitatamente alla posizione del max e del min.<br>
+Se il min precede il max ordinamento crescente <br>
+altrimenti decrescente.<br>
+ES: 1 5 3 9 8 5 <br>
+    ^     ^<br>
+    1 3 5 9 8 <br>
+<br>
+ES: 2 9 3 7 8 1<br>
+      ^       ^<br>
+    2 9 8 7 3 1<br>
+    <br>
+51&gt <br>
+int v1[DIM]={23,11,34,76,99,23,67,83,88,10};<br>
+<br>
+int i,j,box,c=0,cswap=0;<br>
+	for(i=0;i&ltDIM;i++){<br>
+		for(j=0;j&ltDIM;j++){<br>
+			if(v[i]&ltv[j]){<br>
+				box=v[i];<br>
+				v[i]=v[j];<br>
+				v[j]=box;<br>
+				cswap++;<br>
+			}<br>
+			c++;<br>
+		}<br>
+	}<br>
+confronti? 100  swap? ..... ordina? si se si (C/D)<br>
+<br>
+211218<br>
+======<br>
+52&gt convertire un array dimensionato DIM=8 da binario a decimale<br>
+es int v[]={0,0,0,0,1,1,0,1}; //un byte<br>
+00001101[2]=13[10]<br>
+<br>
+53&gt convertire numero decimale a un array dimensionato DIM=8 binario <br>
+es: 7[10]=00000111<br>
+<br>
+220107<br>
+======<br>
+54&gt data una stringa s caricata contestualmente (contenente solo lettere e spazi per ipotesi)<br>
+eliminare gli spazi e caricare in una seconda stringa s2<br>
+convertire s2 tutto in minuscole<br>
+ordinare s2 in modo crescente<br>
+visualizzare s2<br>
+<br>
+es: s="vADo al maRe"<br>
+s2="vADoalmaRe"<br>
+s2="vadoalmare"<br>
+s2="aaadelmorv"<br>
+<br>
+55&gt Ci sono 2 gare di 10 atleti con punteggio [1..50] <br>
+ordinate gara1 e gara2 in modo decrescente<br>
+scrivere gli atleti che hanno realizzato i 3 migliori tempi tenendo conto delle due gare<br>
+<br>
+es di 2 gare tra 5 atleti: (1 7 sta per atleta1 con punteggio 7)<br>
+gara1: 1  7, 2 21, 3 12, 4 45, 5 13<br>
+gara2: 1 17, 2 20, 3 12, 4 41,	5 18<br>
+<br>
+ordinamento gara 1<br>
+4 45, 2 21, 5 13, 3 12, 1 7<br>
+<br>
+ordinamento gara 2<br>
+4 41, 2 20, 5 18, 1 17, 3 12<br>
+<br>
+3 migliori tempi:<br>
+4 45, 4 41, 2 21 <br>
+(cioè l'atleta4 si piazza al primo posto con 45 e al secondo posto con 41, terzo l'atleta2 con 21)<br>
+<br>
+220108<br>
+======<br>
+56&gt ordina-stringhe  <br>
+Scrivere un programma che ordini in modo crescente e con un algoritmo in-place un array di<br>
+DIM stringhe inserite esternmente, visualizzando il risultato dell'ordinamento sullo schermo. Si assuma che ogni stringa abbia una lunghezza L non superiore a 80 caratteri.<br>
+<br>
+220114<br>
+======<br>
+57&gt <br>
+Switch case (menu)<br>
+0. Carica<br>
+1. Visualizza<br>
+2. Bubble sort<br>
+3. Selection sort<br>
+4. Insertion sort<br>
+5.exit<br>
+<br>
+220118<br>
+======<br>
+58&gt Benchmark tra sorting: bubble, selection, insertion<br>
+<br>
+int swap_count = 0;<br>
+int comp_count = 0;<br>
+void incSwap() { swap_count++; }<br>
+void incComp() { comp_count++; }<br>
+<br>
+void resetCounters(){<br>
+	swap_count = 0;<br>
+	comp_count = 0;<br>
+}<br>
+void printCounters(){<br>
+	printf("Confronti effettuati: %d\n", comp_count);<br>
+	printf("Scambi effettuati: %d\n", swap_count);<br>
+}<br>
+<br>
+220121<br>
+======<br>
+59&gt Caricare un vet v DIM=20 con numeri random a piacere.<br>
+Visualizzare v.<br>
+Ordinare la prima metà di v e poi la seconda metà di v.<br>
+Alla fine v risulterà ordinato.<br>
+Visualizzare nuovamente v.<br>
+<br>
+60&gt Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente.<br>
+visualizzare s.<br>
+visualizzare s2.<br>
+<br>
+220125<br>
+======<br>
+61&gt Eseguire una ricerca binaria su un array v dimensionato DIM=10.<br>
+Inserire un valore esternamente e trovare se appartiene o meno a v.<br>
+<br>
+220218<br>
+======<br>
+62&gt dato una matrice numerica quadrata m dimensionato DIM=10 con caricamento contestuale a piacere [10..90].<br>
+visualizzare la matrice.<br>
+Riga dispari ordinata in modo crescente<br>
+Riga pari ordinata in modo decrescente<br>
+visualizzare la matrice.<br>
+<br>
+63&gt dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9] <br>
+visualizzare la cifra che presenta più occorrenze<br>
+<br>
+<br>
+64&gt dato un array dimensionato DIM=10 di stringhe con lunghezza L=80 inserite esternamente<br>
+preparare il seguente menu<br>
+<br>
+0 - escape<br>
+n – ordina le stringhe per nome in modo crescente<br>
+d – ordina le stringhe per lunghezza in modo crescente <br>
+v – ordina le stringhe contenenti più vocali in modo crescente <br>
+<br>
+220223<br>
+======<br>
+65&gt Dato un numero n inserito esternamente calcolare la somma dei primi N numeri pari (&gt0) positivi in maniera ricorsiva.<br>
+<br>
+220225<br>
+======<br>
+66&gt Calcolare il massimo di un vettore v dimensionato DIM con procedimento ricorsivo.<br>
+<br>
+220304<br>
+======<br>
+67&gt puntatori e ricorsione<br>
+==========================<br>
+Scrivere la funzione ricorsiva:<br>
+int count_char(char *str, char c, int) // + facile<br>
+int count_char(char *str, char c) // + difficile<br>
+che conta il numero di occorrenze del carattere c nella stringa str. <br>
+<br>
+<br>
+68&gt Scrivere una funzione ricorsiva che, dati due numeri interi n1 ed n2, restituisca la somma di tutti gli interi compresi tra n1 ed n2 estremi esclusi.<br>
+<br>
+69&gt Algoritmo ricorsivo per la visualizzazione di un vettore di interi<br>
+<br>
+70&gt Algoritmo ricorsivo per la ricerca di un intero in un vettore<br>
+<br>
+220308<br>
+======<br>
+71&gt<br>
+Ricerca dicotomica ricorsiva in un array ordinato<br>
+<br>
+72&gt ADT simulato di uno stack mediante un array<br>
+primitive:<br>
+void push(element, stack);<br>
+element pop(stack);<br>
+boolean isEmpty(stack);<br>
+boolean isFull(stack);<br>
+int Top(stack);<br>
+<br>
+220315<br>
+======<br>
+73&gt<br>
+In una classe sono memorizzati 10 studenti:<br>
+● cognome;<br>
+● nome;<br>
+● voto_info<br>
+● voto_condotta<br>
+Realizza un programma che implementi le seguenti funzionalità:<br>
+1. Inserimento dei dati dgli alunni;<br>
+2. dato il nominativo di un alunno permetta di modificare solo il voto di condotta<br>
+3. modifichi (incrementando o decrementando di un punto il voto di informatica di tutti gli alunni)<br>
+0. Esc<br>
+220401<br>
+======<br>
+74&gt leggere un file "prova.txt" e visualizzarlo <br>
+<br>
+75&gt copiare un file "prova.txt" su un altro file "provacopy.txt"<br>
+<br>
+76&gt appendere "file2.txt" a "file1.txt" in un "fileall.txt" <br>
+<br>
+77&gt leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono <br>
+<br>
+220405<br>
+======<br>
+78&gt <br>
+Creare un file "ricordi.old" tutto minuscolo.<br>
+Cambiare il primo carattere di ogni paragrafo in maiuscolo (paragrafo: si va a capo dopo il punto).<br>
+<br>
+79&gt <br>
+int v[row];<br>
+int *pv;<br>
+pv=&v[0];<br>
+    <br>
+int m[row][col];<br>
+int *pm;<br>
+pm=&m[0][0];<br>
+  <br>
+caricare, visualizzare e trovare il max<br>
+USANDO SOLO ARITMETICA DEI PUNTATORI <br>
+row e col sono chieste all'utente<br>
+<br>
+220422<br>
+======<br>
+80&gt<br>
+Dato un file si testo "prova.txt" riversare il file su un secondo file "prova2.txt", ma al posto della 'f' va scritta la stringa "effe".<br>
+es: caffettiera -&gt caeffeeffettiera<br>
+<br>
+81&gt <br>
+Fare l'operazione contraria: sostituire la stringa "effe" con il carattere 'f'.<br>
+es: caeffeeffettiera -&gt caffettiera <br>
+<br>
+82&gt <br>
+dato un file "numeri.num" contare quante cifre ci sono e attaccarle a fine file.<br>
+(NB: il numero va scomposto nelle sue cifre prima di convertirlo in testo)<br>
+<br>
+es: "prova di 12345 scrittura 123123 alla 0 fine."<br>
+-&gt "prova di 12345 scrittura 123123 alla 0 fine.12"<br>
+<br>
+83&gt<br>
+Gestione di un'anagrafica "anagrafica.dat"<br>
+              (cognome, nome, indirizzo,eta)<br>
+1. Inserimento <br>
+2. Modifica<br>
+3. Cancellazione <br>
+4. Ricerca <br>
+5. Visualizzazione  <br>
+0. Fine<br>
+<br>
+avrete bisogno di:<br>
+ftell()<br>
+fseek()<br>
+fread()<br>
+fwrite()<br>
+<br>
+e delle aperture(vi conviene fare in modo che <br>
+ogni function apra e chiuda il file nel modo opportuno):<br>
+r<br>
+r+<br>
+a+<br>
+<br>
+FileLab<br>
+=======<br>
+1. Scrivere un programma che legga e visualizzi il contenuto di un file ASCII, per esempio<br>
+autoexec.bat.<br>
+<br>
+2. Scrivere un programma che apra un file inserito esternamente e vi inserisca 80 caratteri.<br>
+<br>
+3. Scrivere un programma che apra un file, legga e visualizzi una riga, poi torni indietro all’inizio<br>
+del file e legga nuovamente una linea. Ovviamente le due letture devono produrre il medesimo<br>
+risultato.<br>
+<br>
+4. Aprire un file ASCII e leggere e visualizzare i primi 10 gruppi di caratteri separati da blank e newline.<br>
+<br>
+<br>
+5. Scrivere un programma che permetta di gestire una rubrica telefonica in modo che i dati vengano memorizzati in forma permanente sul file rubrica.dat. Offrire all’utente un menu con le opzioni: inserimento, modifica, cancellazione e visualizzazione dell’intera rubrica.<br>
+Siete liberi di scegliere la struttura dei dati.<br>
+<br>
+6. Aprire un file ASCII. (r)<br>
+int ContaChar();<br>
+int ContaConsonanti();<br>
+<br>
+7.Aprire un file ASCII. (r+)<br>
+sostituire la parola "cor" con "cuore" - on place, cioè senza ausilio di altri file. <br>
+<br>
+8.Creare un programma che dati due file “txt1.txt” e txt2.txt” copia in un terzo file “txt3.txt” solo la parte iniziale di “txt1.txt” presente anche all’inizio di “txt2.txt”.<br>
+es:<br>
+"Oggi sono a scuola per bere un caffè"<br>
+"Oggi sono a scuola per farmi interrogare in inglese"<br>
+"Oggi sono a scuola per "<br>
+<br>
+9. Scrivere una funzione che permetta l’ordinamento per gruppi di caratteri separati da blank e newline di un file ASCII. <br>
+(limitiamo il file a 100 parole)<br>
+es: Oggi vado al mare.<br>
+-&gtOggi al mare vado<br>
+<br>

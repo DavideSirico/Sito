@@ -1,0 +1,17 @@
+#include&ltstdio.h&gt
+#include&ltstring.h&gt
+int main()
+{
+	char s[80];
+	int ctr,i;
+	ctr=0;
+	printf("Inserisci stringa: ");
+	gets(s);
+	for(i=0;i&ltstrlen(s);i++){
+		if(s[i]&gt=48 && s[i]&lt=57){
+			ctr++;
+		}
+	}
+	printf("le cifre nella stringa sono: %d",ctr);
+	return 0;
+}

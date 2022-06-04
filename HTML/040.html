@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 040</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a class="active-top" href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="028.html">028</a></li>
+    <li><a href="029.html">029</a></li>
+    <li><a href="030.html">030</a></li>
+    <li><a href="031.html">031</a></li>
+    <li><a href="032.html">032</a></li>
+    <li><a href="033.html">033</a></li>
+    <li><a href="034.html">034</a></li>
+    <li><a href="037.html">037</a></li>
+    <li><a href="038.html">038</a></li>
+    <li><a href="039.html">039</a></li>
+    <li><a class="active-left"     href="040.html">040</a></li>
+    <li><a href="041.html">041</a></li>
+    <li><a href="042.html">042</a></li>
+    <li><a href="043.html">043</a></li>
+    <li><a href="044.html">044</a></li>
+
+  </ul>
+  <div class="consegna">40&gt emulare la funzione strncmp char by char<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#define DIM 80
+int my_strncmp(char [], char [],int);
+int main(){
+    char s1[DIM],s2[DIM],flag;
+    int n;
+    printf("Inserire la 1 stringa: ");
+    gets(s1);
+    printf("Inserire la 2 stringa: ");
+    gets(s2);
+    printf("Inserire n: ");
+    scanf("%d",&n);
+    fflush(stdin);
+    flag=my_strncmp(s1,s2,n);
+    if(flag==0){
+        printf("%s = %s",s1,s2);
+    } else if(flag&lt0){
+            printf("%s &lt %s",s1,s2);
+    } else {
+        printf("%s &gt %s",s1,s2);
+    }
+    return 0;
+}
+int my_strncmp(char dest[DIM], char orig[DIM],int n){
+    int i;
+    i=0;
+    while(((dest[i]!='\0') || (orig[i]!='\0')) || (i&ltn)){
+            if(dest[i]&ltorig[i]){
+                return -1;
+            }
+            if(dest[i]&gtorig[i]){
+                return 1;
+            }
+            i++;
+    }
+    return 0;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/040.c">040.c</a>
+</body>
+</html>

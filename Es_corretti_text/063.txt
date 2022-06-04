@@ -1,0 +1,72 @@
+//220218_063_Sirico_Davide.c
+/*
+63&gt dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9] 
+visualizzare la cifra che presenta più occorrenze
+*/
+
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &lttime.h&gt
+#define DIM 20
+
+void visualizza(int []);
+void occ(int []);
+void sort(int []);
+void carica(int []);
+int main(){
+    srand(time(NULL));
+    int v[DIM];
+    carica(v);
+    visualizza(v);
+    occ(v);
+    return 0;
+}
+
+void visualizza(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v[i]);
+    }
+    putchar('\n');
+}
+
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%9+1;
+    }
+}
+
+void sort(int v[DIM]){
+    int i,j;
+    int temp;
+    for(i=0;i&ltDIM-1;i++){
+        for(j=i+1;j&ltDIM;j++){
+            if(v[i]&gtv[j]){
+                temp=v[i];
+                v[i]=v[j];
+                v[j]=temp;
+            }
+        }
+    }
+}
+
+void occ(int v[DIM]){
+    int i,j,max,maxi,c;
+    max=0;
+    sort(v);
+    i=0;
+    while(i&ltDIM-1){
+        c=1;
+        while(v[i]==v[i+1]){
+            c++;
+            i++;
+        }
+        if(max&ltc){
+            max=c;
+            maxi=i;
+        }
+        i++;
+    }
+    printf("numero con piu' occorrenze: %d\n",v[maxi]);
+}

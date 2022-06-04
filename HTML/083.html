@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 083</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a class="active-top" href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="045.html">045</a></li>
+    <li><a href="046.html">046</a></li>
+    <li><a href="047.html">047</a></li>
+    <li><a href="048.html">048</a></li>
+    <li><a href="049.html">049</a></li>
+    <li><a href="081.html">081</a></li>
+    <li><a class="active-left"     href="083.html">083</a></li>
+  </ul>
+  <div class="consegna">83&gt
+    Gestione di un'anagrafica "anagrafica.dat"<br>
+                  (cognome, nome, indirizzo,eta)<br>
+    1. Inserimento <br>
+    2. Modifica<br>
+    3. Cancellazione <br>
+    4. Ricerca <br>
+    5. Visualizzazione  <br>
+    0. Fine<br>
+    <br>
+    avrete bisogno di:<br>
+    ftell()<br>
+    fseek()<br>
+    fread()<br>
+    fwrite()<br>
+    <br>
+    e delle aperture(vi conviene fare in modo che <br>
+    ogni function apra e chiuda il file nel modo opportuno):<br>
+    r<br>
+    r+<br>
+    a+<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &ltstring.h&gt
+#include &lttime.h&gt
+#define DIM 10
+
+struct anagrafica{
+  char nome[20];
+  char cognome[20];
+  char indirizzo[30];
+  char eta[3];
+}persona;
+
+int Ricerca(struct anagrafica);
+void Inserimento();
+void Modifica(struct anagrafica);
+void Cancellazione(struct anagrafica);
+void Visualizzazione();
+
+int main(){
+  struct anagrafica persona_temp;
+  int scelta;
+  while(1){
+    printf("\n1. Inserimento");
+    printf("\n2. Modifica");
+    printf("\n3. Cancellazione");
+    printf("\n4. Ricerca ");
+    printf("\n5. Visualizzazione");
+    printf("\n0. Fine\n");
+    printf("\nScelta: ");
+    scanf("%d",&scelta);
+    fflush(stdin);
+    switch(scelta){
+      case 1:
+        Inserimento();
+        break;
+      case 2:
+        Modifica(persona_temp);
+        break;
+      case 3:
+        printf("\nNome:");
+        scanf("%s", persona_temp.nome);
+        fflush(stdin);
+
+        printf("\nCognome:");
+        scanf("%s", persona_temp.cognome);
+        fflush(stdin);
+
+        printf("\nIndirizzo:");
+        gets(persona_temp.indirizzo);
+        fflush(stdin);
+
+        printf("\nEta':");
+        scanf("%s", persona_temp.eta);
+        fflush(stdin);
+        Cancellazione(persona_temp);
+        break;
+      case 4:
+        printf("\nNome:");
+        scanf("%s", persona_temp.nome);
+        fflush(stdin);
+
+        printf("\nCognome:");
+        scanf("%s", persona_temp.cognome);
+        fflush(stdin);
+
+        printf("\nIndirizzo:");
+        gets(persona_temp.indirizzo);
+        fflush(stdin);
+
+        printf("\nEta':");
+        scanf("%s", persona_temp.eta);
+        fflush(stdin);
+        if(Ricerca(persona_temp)==-1){
+          printf("\nPersona non trovata\n\n");
+        } else {
+          printf("\nPersona trovata\n\n");
+        }
+        break;
+      case 5:
+        Visualizzazione();
+        break;
+      case 0:
+        return 0;
+        break;
+      default:
+        printf("Scelta non valida");
+        break;
+    }
+  }
+  return 0;
+}
+
+void Inserimento(){
+  FILE *fp;
+  fp=fopen("anagrafica.txt", "a");
+  if(fp==NULL){ perror("Errore"); exit(1); }
+
+  printf("\nNome:");
+  scanf("%s", persona.nome);
+  fflush(stdin);
+
+  printf("\nCognome:");
+  scanf("%s", persona.cognome);
+  fflush(stdin);
+
+  printf("\nIndirizzo:");
+  gets(persona.indirizzo);
+  fflush(stdin);
+
+  printf("\nEta':");
+  scanf("%s", persona.eta);
+  fflush(stdin);
+
+  fwrite(&persona, sizeof(struct anagrafica), 1, fp);
+  
+
+  fclose(fp);
+}
+
+void Modifica(struct anagrafica persona_temp){
+  FILE *fp;
+  fp=fopen("anagrafica.txt", "r+");
+  if(fp==NULL){ perror("Errore"); exit(1); }
+  int n;
+  if((n=Ricerca(persona_temp))!=-1){
+    fseek(fp, n*sizeof(struct anagrafica), SEEK_SET);
+    fwrite(&persona_temp, sizeof(struct anagrafica), 1, fp);
+  }
+  fclose(fp);
+}
+
+void Cancellazione(struct anagrafica persona_temp){
+  FILE *fp;
+  fp=fopen("anagrafica.txt", "r+");
+  if(fp==NULL){ perror("Errore"); exit(1); }
+  int n;
+  if((n=Ricerca(persona_temp))!=-1){
+    FILE *fp2;
+    fp2=fopen("anagrafica2.txt", "w");
+    if(fp2==NULL){ perror("Errore"); exit(1); }
+    int i=0;
+    while(fread(&persona_temp, sizeof(struct anagrafica), 1, fp)!=0){
+      if(i!=n){
+        fwrite(&persona_temp, sizeof(struct anagrafica), 1, fp2);
+      }
+      i++;
+    }
+    fclose(fp2);
+    fclose(fp);
+    if(remove("anagrafica.txt")!=0){ perror("Errore nella cancellazione del file"); exit(1); }
+    if(rename("anagrafica2.txt", "anagrafica.txt")!=0){ perror("Errore nella cancellazione del file"); exit(1); }
+    if(remove("anagrafica2.txt")!=0){ perror("Errore nella cancellazione del file"); exit(1); }
+  } else {
+    fclose(fp);
+  }
+}
+
+int Ricerca(struct anagrafica persona_temp){
+  FILE *fp;
+  fp=fopen("anagrafica.txt", "r");
+  if(fp==NULL){ perror("Errore"); exit(1); }
+  int c=0;
+  while((fread(&persona, sizeof(struct anagrafica), 1, fp))!=0){
+    if(strcmp(persona.nome, persona_temp.nome)==0 && strcmp(persona.cognome, persona_temp.cognome)==0 && strcmp(persona.indirizzo, persona_temp.indirizzo)==0 && strcmp(persona.eta, persona_temp.eta)==0){
+      return c;
+    }
+    c++;
+  }
+  return -1;
+  fclose(fp);
+}
+
+void Visualizzazione(){
+  FILE *fp;
+  fp=fopen("anagrafica.txt", "r");
+  if(fp==NULL){ perror("Errore"); exit(1); }
+
+  while((fread(&persona, sizeof(struct anagrafica), 1, fp))!=0){
+    printf("\nNome: %s", persona.nome);
+    printf("\nCognome: %s", persona.cognome);
+    printf("\nIndirizzo: %s", persona.indirizzo);
+    printf("\nEta': %s", persona.eta);
+    printf("\n\n\n\n");
+  }
+
+  fclose(fp);
+}
+    
+  </PRE>
+  <a class="download" href="../C/083.c">083.c</a>
+</body>
+</html>

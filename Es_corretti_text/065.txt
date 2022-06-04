@@ -1,0 +1,25 @@
+/*220223
+======
+65&gt Dato un numero n inserito esternamente calcolare 
+la somma dei primi N numeri pari (&gt0) positivi in maniera ricorsiva.*/
+#include &ltstdio.h&gt
+#include &lttime.h&gt
+#include &ltstdlib.h&gt
+int somma(int n);
+int main(){
+    int n;
+    long int ris;
+    printf("inserire n:");
+    scanf("%d", &n);
+    fflush(stdin);
+    printf("%d", somma(n));
+    return 0;
+}
+int somma(int n){
+    int ctr=n;
+    if(ctr==1){
+        return (2);
+    }else{
+        return (ctr*2+somma(ctr-1));
+    }
+}

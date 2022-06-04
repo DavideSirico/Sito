@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 038</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a class="active-top" href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="028.html">028</a></li>
+    <li><a href="029.html">029</a></li>
+    <li><a href="030.html">030</a></li>
+    <li><a href="031.html">031</a></li>
+    <li><a href="032.html">032</a></li>
+    <li><a href="033.html">033</a></li>
+    <li><a href="034.html">034</a></li>
+    <li><a href="037.html">037</a></li>
+    <li><a class="active-left"     href="038.html">038</a></li>
+    <li><a href="039.html">039</a></li>
+    <li><a href="040.html">040</a></li>
+    <li><a href="041.html">041</a></li>
+    <li><a href="042.html">042</a></li>
+    <li><a href="043.html">043</a></li>
+    <li><a href="044.html">044</a></li>
+
+  </ul>
+  <div class="consegna">38&gt emulare la funzione strncpy char by char<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstring.h&gt
+#define DIM 80
+void my_strncpy(char [], char[],int n);
+int main(){
+	char s1[DIM],s2[DIM];
+	int n;
+	printf("s1: ");
+	gets(s1);
+	printf("s2: ");
+	gets(s2);
+	printf("n:");
+	scanf("%d",&n);
+	fflush(stdin);
+	strncpy(s2,s1,n);
+	printf("s1: ");
+	puts(s2);
+	return 0;
+}
+void my_strncpy(char s2[DIM], char s1[DIM],int n){
+	int i;
+	for(i=0;i&ltn;i++){
+		s2[i]=s1[i];	
+	}
+	s2[i]='\0';
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/038.c">038.c</a>
+</body>
+</html>

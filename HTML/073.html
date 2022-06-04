@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 073</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a class="active-top" href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="073.html">073</a></li>
+  </ul>
+  <div class="consegna">73&gt<br>
+	In una classe sono memorizzati 10 studenti:<br>
+	● cognome;<br>
+	● nome;<br>
+	● voto_info<br>
+	● voto_condotta<br>
+	Realizza un programma che implementi le seguenti funzionalità:<br>
+	1. Inserimento dei dati dgli alunni;<br>
+	2. dato il nominativo di un alunno permetta di modificare solo il voto di condotta<br>
+	3. modifichi (incrementando o decrementando di un punto il voto di informatica di tutti gli alunni)<br>
+	0. Esc<br></div>
+
+  <PRE>#include&ltstdio.h&gt
+#include&ltstring.h&gt
+#define DIM 2
+#define L 20
+struct studenti{
+	char cognome[L];
+	char nome[L];
+	int info;
+	int condotta;
+}alunni[DIM];
+void carica_dati(struct studenti []);
+void visualizza_dati(struct studenti []);
+void modifica_condotta(struct studenti []);
+void modifica_info(struct studenti []);
+int main()
+{
+	int scelta;
+	scelta=5; //numero casuale che non sia tra quelli da inserire
+	while(1){
+		printf("0&gtesc\n1&gtcarica_dati\n2&gtvisualizza_dati\n3&gtmodifica_condotta\n4&gtmodifica_info\nscelta: ");
+		scanf("%d",&scelta);
+		fflush(stdin);
+		switch(scelta){
+			case 0:
+				return 0;
+				break;
+			case 1:
+				putchar('\n');
+				carica_dati(alunni);
+				break;
+			case 2:
+				putchar('\n');
+				visualizza_dati(alunni);
+				break;
+			case 3:
+				putchar('\n');
+				modifica_condotta(alunni);
+				break;
+			case 4:
+				putchar('\n');
+				modifica_info(alunni);
+				break;	
+			default:
+				printf("Errore!!\n");
+				break;
+		}
+		putchar('\n');
+		scelta=5;
+	}
+	return 0;
+}
+void carica_dati(struct studenti alunni[DIM]){
+	int i;
+	for(i=0;i&ltDIM;i++){
+		printf("Cognome alunno %d: ",i+1);
+		gets(alunni[i].cognome);
+		fflush(stdin);
+		printf("Nome alunno %d: ",i+1);
+		gets(alunni[i].nome);
+		fflush(stdin);
+		do{
+			printf("Voto info alunno %d: ",i+1);
+			scanf("%d",&alunni[i].info);
+			fflush(stdin);
+		}while(alunni[i].info&lt=0 || alunni[i].info&gt10);
+		do{
+			printf("Voto condotta alunno %d: ",i+1);
+			scanf("%d",&alunni[i].condotta);
+			fflush(stdin);
+		}while(alunni[i].condotta&lt=0 || alunni[i].condotta&gt10);
+		putchar('\n');
+	}
+}
+void visualizza_dati(struct studenti alunni[DIM]){
+	int i;
+	for(i=0;i&ltDIM;i++){
+		printf("Alunno %d: %s %s\n",i+1,alunni[i].cognome,alunni[i].nome);
+		printf("Voto info: %d ",alunni[i].info);
+		printf("Voto condotta: %d",alunni[i].condotta);
+		putchar('\n');
+	}
+}
+void modifica_condotta(struct studenti alunni[DIM]){
+	int i,flag;
+	char n[L],c[L];
+	flag=0;
+	printf("inserisci nome: ");
+	gets(n);
+	fflush(stdin);
+	printf("inserisci cognome: ");
+	gets(c);
+	fflush(stdin);
+	for(i=0;i&ltDIM;i++){
+		//sistemare sta parte qua
+		if(strcmp(n,alunni[i].nome)==0 && strcmp(c,alunni[i].cognome)==0){
+			flag=1;
+			printf("modifica voto condotta: ");
+			scanf("%d",&alunni[i].condotta);
+			fflush(stdin);
+		}
+	}
+	if(flag==0){
+		printf("studente non trovato!!");
+		putchar('\n');
+	}
+}
+void modifica_info(struct studenti alunni[DIM]){
+	int i;
+	for(i=0;i&ltDIM;i++){
+		alunni[i].info++;
+	}
+}
+
+  </PRE>
+  <a class="download" href="../C/073.c">073.c</a>
+</body>
+</html>

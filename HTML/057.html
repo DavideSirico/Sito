@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 057</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a class="active-top" href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a href="050.html">050</a></li>
+    <li><a href="051.html">051</a></li>
+    <li><a href="054.html">054</a></li>
+    <li><a href="055.html">055</a></li>
+    <li><a href="056.html">056</a></li>
+    <li><a class="active-left"     href="057.html">057</a></li>
+    <li><a href="058.html">058</a></li>
+    <li><a href="059.html">059</a></li>
+    <li><a href="060.html">060</a></li>
+    <li><a href="061.html">061</a></li>
+    <li><a href="062.html">062</a></li>
+    <li><a href="063.html">063</a></li>
+    <li><a href="064.html">064</a></li>
+
+  </ul>
+  <div class="consegna">57&gt <br>
+    Switch case (menu)<br>
+    0. Carica<br>
+    1. Visualizza<br>
+    2. Bubble sort<br>
+    3. Selection sort<br>
+    4. Insertion sort<br>
+    5.exit<br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &lttime.h&gt
+#include &ltstdlib.h&gt
+#define DIM 10
+
+void visualizza(int []);
+void carica(int []);
+void sort_bubble(int []);
+void sort_insertion(int []);
+void sort_sel(int []);
+int main(){
+    int n,v[DIM],v2[DIM];
+    srand(time(NULL));
+    while(1){
+        printf("0: exit\n1:carica\n2:visualizza\n3:bubble sort\n4:selection sort\n5:insertion sort\n");
+        printf("Inserire l'opzione: ");
+        scanf("%d",&n);
+        fflush(stdin);
+        switch(n){
+            case 0:
+                return 0;
+            case 1:
+                carica(v);
+            break;
+            case 2:
+                visualizza(v);
+            break;
+            case 3:
+                sort_bubble(v);
+            break;
+            case 4:
+                sort_sel(v);
+            break;
+            case 5:
+                sort_insertion(v);
+            break;
+            default:
+                printf("Numero non valido");
+            break;
+        }
+    }
+}
+
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        v[i]=rand()%99;
+    }
+}
+
+void visualizza(int v[DIM]){
+    int i;
+    for(i=0;i&ltDIM;i++){
+        printf("%d ",v[i]);
+    }
+    putchar('\n');
+}
+
+
+void sort_bubble(int v[DIM]){
+    int i,j,temp;
+    for(i=0;i&ltDIM-1;i++){
+        for(j=i+1;j&ltDIM;j++){
+            if(v[j]&ltv[i]){
+                temp=v[j];
+                v[j]=v[i];
+                v[i]=temp;
+            }
+        }
+    }
+}
+
+void sort_insertion(int v[DIM]){
+	int i,j,min;
+    for(i=1;i&ltDIM;i++){
+        min=v[i];
+        for(j=i-1;(j&gt=0) && (min&ltv[j]);j--){
+            v[j+1]=v[j];
+        }
+        v[j+1]=min;
+    }
+}
+
+void sort_sel(int v[DIM]){
+	int i,j,imin,temp;
+	for(i=0;i&lt(DIM-1);i++){
+		imin=i;
+		for(j=i+1;j&ltDIM;j++){
+			if(v[imin]&gtv[j]){
+				imin=j;
+			}
+		}
+		if(i!=imin){
+            temp=v[i];
+            v[i]=v[imin];
+            v[imin]=temp;
+		}
+	}
+}
+    
+  </PRE>
+  <a class="download" href="../C/057.c">057.c</a>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Es 074</title>
+  <link rel="stylesheet" type="text/CSS" href="../CSS/css.css">
+</head>
+
+<body>
+  <ul class="navbar-top">
+    <li class="litop"><a href="../index.html">Home</a></li>
+    <li class="litop"><a href="Fondamenti.html">Fondamenti C</a></li>
+    <li class="litop"><a href="Vettori.html">Vettori e matrici</a></li>
+    <li class="litop"><a href="Stringhe.html">Stringhe</a></li>
+    <li class="litop"><a href="Lavori_di_gruppo.html">Lavori di gruppo</a></li>
+    <li class="litop"><a href="Sorting.html">Sorting</a></li>
+    <li class="litop"><a href="Ricorsione.html">Ricorsione</a></li>
+    <li class="litop"><a href="Funzioni_primitive.html">Funzioni primitive</a></li>
+    <li class="litop"><a href="Strutture.html">Strutture</a></li>
+    <li class="litop"><a href="Puntatori.html">Puntatori</a></li>
+    <li class="litop"><a class="active-top" href="File.html">File</a></li>
+  </ul>
+  <ul class="navbar-left">
+    <li><a class="active-left"     href="074.html">074</a></li>
+    <li><a href="075.html">075</a></li>
+    <li><a href="076.html">076</a></li>
+    <li><a href="077.html">077</a></li>
+    <li><a href="078.html">078</a></li>
+    <li><a href="080.html">080</a></li>
+    <li><a href="082.html">082</a></li>
+    <li><a href="084.html">084</a></li>
+    <li><a href="085.html">085</a></li>
+    <li><a href="086.html">086</a></li>
+    <li><a href="087.html">087</a></li>
+    <li><a href="088.html">088</a></li>
+    <li><a href="089.html">089</a></li>
+    <li><a href="090.html">090</a></li>
+    <li><a href="091.html">091</a></li>
+    <li><a href="092.html">092</a></li> 
+  </ul>
+  <div class="consegna">74&gt leggere un file "prova.txt" e visualizzarlo <br></div>
+
+  <PRE>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+int main(){
+    char buffer[100];
+    FILE *fp;
+    int i;
+    int n;
+    fp=fopen("input.txt", "r");
+    if( fp == NULL )
+        printf("Errore : il file non esiste\n");
+    while((n=fread(buffer, 1, 100, fp))!=0){
+        buffer[n]='\0';
+        printf("%s", buffer); 
+    }
+    fclose(fp);
+    return 0;
+}
+
+    
+  </PRE>
+  <a class="download" href="../C/074.c">074.c</a>
+</body>
+</html>
